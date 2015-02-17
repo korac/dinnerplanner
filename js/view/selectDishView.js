@@ -3,10 +3,19 @@
  */
 var SelectedDishView = function(container, model){
 
-    this.selectingDish = container.find("#filter");
+    this._model = model;
+    this._container = container;
 
-    var filter =
+    this.dishes = this._container;
 
-    this.selectingDish.html(model.getAllDishes("main dish", filter));
+    var startingFood = this._model.getAllDishes("starter");
+
+    for(var i=0; i<startingFood.length; i++) {
+        var htmlKod = '<div class="col-md-2"><div class="thumbnail"><figure><img src="images/'
+            + startingFood[i].image + '" alt=""/><figcaption>'
+            + startingFood[i].name + '</figcaption></figure></div><p>'
+            + startingFood[i].description + '</p></div>';
+        this.dishes.append(htmlKod);
+    }
 
 }

@@ -15,10 +15,12 @@ html, body, .mainContainer{
 .pageCont .row{
     margin: 0 auto;
 }
+#dishes .row{
+    display: inline;
+}
 
 .SEK{
-    position: relative;
-    left: 135px;
+    text-align: right;
 }
 
 .sideBar{

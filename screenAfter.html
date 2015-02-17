@@ -36,28 +36,16 @@
                         <br>
                         <br>
 
-                        <table class="table">
+                        <table class="table" id="pendingDish">
                             <tr>
                                 <th>Dish</th>
                                 <th>Name</th>
                                 <th>Cost</th>
                             </tr>
 
-                            <tr>
-                                <td>4</td>
-                                <td>Bakedbrie</td>
-                                <td>77.20</td>
-                            </tr>
 
-                            <tr>
-                                <td colspan="2">Pending</td>
-
-                                <td>0.00</td>
-                            </tr>
                         </table>
-                        <hr/>
 
-                        <span class="SEK">SEK 77.20</span>
                         <br/>
                         <br/>
 
@@ -85,55 +73,7 @@
                     <br/>
 
                     <div class="row">
-                        <div class="col-md-2">
-                            <div class="thumbnail">
-                                <figure>
-                                    <img src="images/bakedbrie.jpg" alt=""/>
-                                    <figcaption>Bakedbrie</figcaption>
-                                </figure>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare fermentum ligula sed rutrum.</p>
-                        </div>
-
-                        <div class="col-md-2">
-                            <div class="thumbnail">
-                                <figure>
-                                    <img src="images/icecream.jpg" alt=""/>
-                                    <figcaption>Icecream</figcaption>
-                                </figure>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare fermentum ligula sed rutrum.</p>
-                        </div>
-
-                        <div class="col-md-2">
-                            <div class="thumbnail">
-                                <figure>
-                                    <img src="images/meatballs.jpg" alt=""/>
-                                    <figcaption>Meatballs</figcaption>
-                                </figure>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare fermentum ligula sed rutrum.</p>
-                        </div>
-
-                        <div class="col-md-2">
-                            <div class="thumbnail">
-                                <figure>
-                                    <img src="images/sourdough.jpg" alt=""/>
-                                    <figcaption>Sourdough</figcaption>
-                                </figure>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare fermentum ligula sed rutrum.</p>
-                        </div>
-
-                        <div class="col-md-2">
-                            <div class="thumbnail">
-                                <figure>
-                                    <img src="images/toast.jpg" alt=""/>
-                                    <figcaption>Toast</figcaption>
-                                </figure>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare fermentum ligula sed rutrum.</p>
-                        </div>
+                        <div id="dishes"></div>
                     </div>
                 </div>
             </div>
@@ -154,6 +94,8 @@
         <script src="js/model/dinnerModel.js"></script>
         <script src="js/view/exampleView.js"></script>
         <script src="js/view/exampleViewController.js"></script>
+        <script src="js/view/selectDishView.js"></script>
+        <script src="js/view/sideBarView.js" ></script>
     </div>
 </body>
 </html>
