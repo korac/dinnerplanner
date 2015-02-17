@@ -1,0 +1,57 @@
+.container{
+    background-color: rgba(255,228,196, 0.6);
+    margin: auto auto;
+}
+
+hr{
+    margin: 0;
+}
+
+.container h1{
+    padding-left: 15%;
+    width: inherit;
+}
+
+.container small{
+    font-size: 30px;
+}
+
+
+html, body{
+    height: 100%;
+}
+
+.mainContainer{
+    background-image: url("http://blog.fairwaymarket.com/wp-content/uploads/2011/08/FamilyEatingDinner.jpg");
+    background-size: 100%;
+    margin-bottom: 0;
+    height: 100%;
+}
+
+.information{
+    background-color: rgba(255,255,255, 0.80);
+    position: relative;
+    left: 15%;
+    top: 220px;
+}
+
+.information p{
+    font-size: 20px;
+}
+
+.information hr{
+    margin: 20px 0;
+    border-color: black;
+}
+
+.buttonCont{
+    margin-left: 20%;
+}
+
+.buttonCont small{
+    font-size: 15px;
+}
+
+
+
+

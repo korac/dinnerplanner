@@ -1,0 +1,103 @@
+.topBar{
+    background-color: rgba(255,228,196, 0.6);
+}
+
+
+
+.container small {
+    font-size: 30px;
+}
+
+html, body, .mainContainer{
+    height: 100%;
+}
+
+.pageCont .row{
+    margin: 0 auto;
+}
+
+.SEK{
+    position: relative;
+    left: 135px;
+}
+
+.sideBar{
+    background-color: rgba(124,255,149,0.3);
+}
+
+.foodCont{
+    background-color: rgba(255, 49, 7, 0.30);
+}
+
+hr{
+    border-color: black;
+}
+
+.searchFood{
+    padding-left: 15px;
+    margin-top: 20px;
+
+}
+
+.searchFood form, select{
+    display: inline;
+}
+
+figure{
+    align-content: center;
+}
+
+
+.ingredients{
+    border-left: thick dotted  black;
+}
+
+.lastSEK{
+    text-align: right;
+}
+
+.dinnerOverview{
+    background-color: #f5e087;
+    height: 80px;
+    padding: 20px 0;
+}
+
+.dinnerOverviewCont{
+    margin-left: 180px;
+    margin-right: 180px;
+}
+
+.dinnerOverview button{
+    float: right;
+}
+
+.dinnerOverview h2{
+    display: inline;
+}
+
+.verticalLine{
+    position: relative;
+    top: 170px;
+    border-left: thin solid black;
+}
+
+.endBtnCont{
+    margin: 0 700px;
+    align-content: center;
+}
+
+.dinnerPreparation{
+    background-color: rgba(255, 49, 7, 0.30);
+}
+
+.dinnerPreparation img{
+    float: left;
+}
+
+.foodMenu{
+    background-color: rgba(255, 49, 7, 0.30);
+}
+
+.description{
+    padding: 25px 40px;
+}
