@@ -19,7 +19,6 @@ var DinnerOverviewView = function(container,model){
         dishesOnMenu.push(dish3);
 
 
-    console.log(dishesOnMenu);
 
 
     var dishPrice = [];
@@ -32,10 +31,10 @@ var DinnerOverviewView = function(container,model){
         }
     }
 
-    console.log(dishPrice);
 
     for(var i=0; i<dishesOnMenu.length; i++) {
-        var htmlKod = '<div class="col-md-3"><div class="thumbnail"><figure><img src="images/' + dishesOnMenu[i].image + '" alt=""/><figcaption>'
+        var htmlKod = '<div class="col-md-3"><div class="thumbnail"><figure><img src="images/'
+            + dishesOnMenu[i].image + '" alt=""/><figcaption>'
             + dishesOnMenu[i].name + '</figcaption></figure><span>'
             + dishPrice[i] + '</span></div></div>';
         this.dishes.append(htmlKod);

@@ -12,4 +12,6 @@ $(function() {
     var dinnerOverviewView = new DinnerOverviewView($("#dinnerOnMenu"),model);
 
     var dinnerPreparationView = new DinnerPreparationView($("#mealsPreparation"),model);
+
+    var meatBallsView = new MeatBallsView($("#foodAndIngredients"),model);
 });
