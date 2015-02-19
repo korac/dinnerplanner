@@ -7,9 +7,25 @@ var DinnerModel = function() {
     this.selectedDishes = [];
     this.ingredients = [];
 
+
+    //observer pattern
+    this.obsArray = [];
+
+    this.addObserver = function (observer) {
+        this.obsArray.push(observer);
+    }
+
+    this.notifyObservers = function(obj){
+        for(var i=0; i<this.obsArray.length; i++){
+            this.obsArray[i](this,obj);
+        }
+    }
+    //
+
 	this.setNumberOfGuests = function(num) {
-		if(num > 0)
+		if(num > 0) {
             this.numberOfGuests = num;
+        }
         else
             alert("You cannot have 0 or negative number of friends");
 	}
@@ -25,7 +41,6 @@ var DinnerModel = function() {
         for(var i=0; i<this.selectedDishes.length; i++){
             if(this.selectedDishes[i].type == type) {
                 return this.selectedDishes[i];
-                break;
             }
         }
 	}
@@ -43,7 +58,6 @@ var DinnerModel = function() {
                }
         }
         return this.ingredients;
-
     }
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
@@ -58,9 +72,30 @@ var DinnerModel = function() {
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
-        //it is removed from the menu and the new one added.
-        this.addDishToMenu = function(id) {
-        this.selectedDishes.push(this.getDish(id));
+    //it is removed from the menu and the new one added.
+    this.addDishToMenu = function(id) {
+        var newDish = this.getDish(id);
+        var newDishType = newDish.type;
+
+        if(typeof this.selectedDishes !== 'undefined' && this.selectedDishes.length > 0){
+            var exists = 0;
+
+            for (var i = 0; i < this.selectedDishes.length; i++) {
+                if (this.selectedDishes[i].type == newDishType) {
+                    this.selectedDishes[i] = newDish;
+                }
+                else {
+                    exists ++;
+                }
+            }
+            if(exists == this.selectedDishes.length){
+                this.selectedDishes.push(newDish);
+            }
+        }
+        else{
+            this.selectedDishes.push(newDish);
+        }
+
 	}
 
 	//Removes dish from menu
