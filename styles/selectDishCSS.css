@@ -20,7 +20,9 @@ html, body, .mainContainer{
 }
 
 .SEK{
-    text-align: right;
+    display: inline;
+    position: relative;
+    left: 162px;
 }
 
 .sideBar{
@@ -102,4 +104,12 @@ figure{
 
 .description{
     padding: 25px 40px;
+}
+
+figure img{
+    margin: 0 auto;
+}
+
+figcaption{
+    text-align: center;
 }

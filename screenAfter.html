@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,33 +24,37 @@
 
         <div class="pageCont">
             <div class="row">
-                <div class="sideBar col-md-2">
-                    <h4>My dinner</h4>
-                    <form action="a_page.asp" method="get">
-                        <div id="exampleView">
-                            Number of guests: <span id="numberOfGuests"></span>
-                        </div>
+                <div class="sideBar col-md-2"  id="sidebar">
+                    <div class="sideBarContent">
+                        <h4>My dinner</h4>
+                        <form>
+                            <div>
+                                Number of guests: <span id="numberOfGuests"></span>
+                            </div>
 
-                        <button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
-                        <button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
-                        <br>
-                        <br>
+                            <button id="minusGuest" class="btn"><span class="glyphicon glyphicon-chevron-down"></span></button>
+                            <button id="plusGuest" class="btn"><span class="glyphicon glyphicon-chevron-up"></span></button>
+                            <br>
+                            <br>
 
-                        <table class="table" id="pendingDish">
-                            <tr>
-                                <th>Dish</th>
-                                <th>Name</th>
-                                <th>Cost</th>
-                            </tr>
+                            <table class="table" id="pendingDish">
+                                <tr>
+                                    <th>Dish</th>
+                                    <th>Name</th>
+                                    <th>Cost</th>
+                                </tr>
 
+                            </table>
+                            <hr/>
 
-                        </table>
+                            <span id="overallPrice" class="SEK">SEK 0.00</span>
 
-                        <br/>
-                        <br/>
+                            <br/>
+                            <br/>
 
-                        <input type="submit" value="Confirm dinner" class="btn btn-warning" />
-                    </form>
+                            <button id="confirmButton" class="btn btn-warning">Confirm dinner <span class="glyphicon glyphicon-saved"></span></button>
+                        </form>
+                    </div>
                 </div>
 
                 <div class="foodCont col-md-10">
@@ -58,14 +62,14 @@
                         <h2>Select Dish</h2>
                         <hr/>
                         <div class="searchFood">
-                            <form action="submit">
+                            <form>
                                 <input type="text" placeholder="Enter key words"/>
-                                <input type="submit" value="Search" class="btn btn-warning"/>
+                                <button class="btn btn-warning"><span class="glyphicon glyphicon-search"></span> Search</button>
                             </form>
                             <select name="" id="">
-                                <option value="mainDish">Main</option>
-                                <option value="starter">Starter</option>
-                                <option value="dessert">Dessert</option>
+                                <option value="1" selected="selected">Starter</option>
+                                <option value="2" >Main dish</option>
+                                <option value="3" >Dessert</option>
                             </select>
                         </div>
                     </div>
@@ -73,7 +77,9 @@
                     <br/>
 
                     <div class="row">
+
                         <div id="dishes"></div>
+
                     </div>
                 </div>
             </div>
@@ -93,9 +99,14 @@
         <script src="js/app.js"></script>
         <script src="js/model/dinnerModel.js"></script>
         <script src="js/view/exampleView.js"></script>
-        <script src="js/view/exampleViewController.js"></script>
+        <script src="js/controller/exampleViewController.js"></script>
         <script src="js/view/selectDishView.js"></script>
+        <script src="js/controller/selectDishController.js"></script>
         <script src="js/view/sideBarView.js" ></script>
+        <script src="js/controller/sideBarController.js"></script>
+        <script src="js/view/dinnerOverviewView.js"></script>
+        <script src="js/view/dinnerPreparationView.js"></script>
+        <script src="js/view/meatBallsView.js"></script>
     </div>
 </body>
 </html>

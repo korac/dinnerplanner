@@ -25,45 +25,44 @@
 
     <div class="pageCont">
         <div class="row">
-            <div class="sideBar  col-md-2">
+            <div class="sideBar col-md-2"  id="sidebar">
                 <div class="sideBarContent">
                     <h4>My dinner</h4>
-
-                    <form action="a_page.asp" method="get">
-                        <div id="exampleView">
+                    <form>
+                        <div>
                             Number of guests: <span id="numberOfGuests"></span>
                         </div>
-                        <button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
-                        <button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
+
+                        <button id="minusGuest" class="btn"><span class="glyphicon glyphicon-chevron-down"></span></button>
+                        <button id="plusGuest" class="btn"><span class="glyphicon glyphicon-chevron-up"></span></button>
                         <br>
                         <br>
 
-                        <table class="table">
+                        <table class="table" id="pendingDish">
                             <tr>
                                 <th>Dish</th>
                                 <th>Name</th>
                                 <th>Cost</th>
                             </tr>
-                            <tr>
-                                <td colspan="2">Pending</td>
-                                <td>0.00</td>
-                            </tr>
+
                         </table>
                         <hr/>
 
-                        <span class="SEK">SEK 0.00</span>
+                        <span id="overallPrice" class="SEK">SEK 0.00</span>
+
                         <br/>
                         <br/>
-                        <input type="submit" value="Confirm dinner" class="btn btn-warning" disabled="disabled"/>
+
+                        <button id="confirmButton" class="btn btn-warning">Confirm dinner <span class="glyphicon glyphicon-saved"></span></button>
                     </form>
                 </div>
             </div>
 
-            <div class="foodCont col-md-10">
+            <div class="foodCont col-md-10" id="meatBallsViewId">
                 <div class="row">
 
-                    <div id="foodAndIngredients">
-                    </div>
+                    <div id="foodAndIngredients"></div>
+
                 </div>
             </div>
         </div>
@@ -79,9 +78,11 @@
     <script src="js/app.js"></script>
     <script src="js/model/dinnerModel.js"></script>
     <script src="js/view/exampleView.js"></script>
-    <script src="js/view/exampleViewController.js"></script>
+    <script src="js/controller/exampleViewController.js"></script>
     <script src="js/view/selectDishView.js"></script>
+    <script src="js/controller/selectDishController.js"></script>
     <script src="js/view/sideBarView.js"></script>
+    <script src="js/controller/sideBarController.js"></script>
     <script src="js/view/dinnerOverviewView.js"></script>
     <script src="js/view/dinnerPreparationView.js"></script>
     <script src="js/view/meatBallsView.js"></script>

@@ -6,25 +6,38 @@ var DinnerModel = function() {
     this.numberOfGuests = 0;
     this.selectedDishes = [];
     this.ingredients = [];
+    this.foodType = "starter";
+    this.clickedDish = 100;
 
 
-    //observer pattern
+    this.setClickedDish = function(clickedDish){
+        this.clickedDish = clickedDish;
+        this.notifyObservers(clickedDish);
+    }
+
+    this.setFoodType = function(foodType){
+        this.foodType = foodType;
+        this.notifyObservers(foodType);
+    }
+
+    /**************** Observer pattern ******************/
     this.obsArray = [];
 
     this.addObserver = function (observer) {
         this.obsArray.push(observer);
     }
 
-    this.notifyObservers = function(obj){
+    this.notifyObservers = function(arg){
         for(var i=0; i<this.obsArray.length; i++){
-            this.obsArray[i](this,obj);
+            this.obsArray[i].update(arg);
         }
     }
-    //
+    /**************** ********* ****************/
 
 	this.setNumberOfGuests = function(num) {
 		if(num > 0) {
             this.numberOfGuests = num;
+            this.notifyObservers();
         }
         else
             alert("You cannot have 0 or negative number of friends");
@@ -95,7 +108,7 @@ var DinnerModel = function() {
         else{
             this.selectedDishes.push(newDish);
         }
-
+        this.notifyObservers(newDish);
 	}
 
 	//Removes dish from menu
@@ -129,7 +142,7 @@ var DinnerModel = function() {
 			}
 		}
 	  	return dish.type == type && found;
-	  });	
+	  });
 	}
 
 	//function that returns a dish of specific ID

@@ -3,19 +3,41 @@
  */
 var SelectedDishView = function(container, model){
 
+    model.addObserver(this);
+
     this._model = model;
     this._container = container;
 
-    this.dishes = this._container;
+    var _this = this;
 
-    var startingFood = this._model.getAllDishes("starter");
+    this.dishes = $("#dishes");
+    this.dropdown = $("select");
+    this.searchFood = "";
 
-    for(var i=0; i<startingFood.length; i++) {
-        var htmlKod = '<div class="col-md-2"><div class="thumbnail"><figure><img src="images/'
-            + startingFood[i].image + '" alt=""/><figcaption>'
-            + startingFood[i].name + '</figcaption></figure></div><p>'
-            + startingFood[i].description + '</p></div>';
-        this.dishes.append(htmlKod);
+
+    this.startingFood = [];
+
+
+    this.update = function() {
+        this.startingFood = this._model.getAllDishes(this._model.foodType);
+
+        this.dishes.empty();
+
+
+        for (var i = 0; i < this.startingFood.length; i++) {
+
+            var dish = this.startingFood[i];
+            var dishId = dish.id;
+
+            var htmlKod = '<div class="col-md-2 displayedFood"><div class="thumbnail" did="'
+                + dishId + '"><figure><img src="images/'
+                + this.startingFood[i].image + '" class="img-circle" alt=""/><figcaption>'
+                + this.startingFood[i].name + '</figcaption></figure></div><p>'
+                + this.startingFood[i].description + '</p></div>';
+            this.dishes.append(htmlKod);
+        }
+
+
     }
 
 }

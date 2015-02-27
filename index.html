@@ -1,38 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dinner planner</title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Dinner planner</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/homeCSS.css"/>
+        <link rel="stylesheet" href="styles/selectDishCSS.css"/>
 
-  </head>
-  <body>
-	<div class="container">
-		<h1>Dinner planner</h1>
-		<div id="exampleView">
-			<div>
-				Number of guests: <span id="numberOfGuests"></span>
-			</div>
-			<div>
-          <button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
-				<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
-			</div>
-		</div>
-	</div>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
 
-	<!-- The application JavaScript code -->
-    <script src="js/app.js"></script>
-    <script src="js/model/dinnerModel.js"></script>
-    <script src="js/view/exampleView.js"></script>
-    <script src="js/view/exampleViewController.js"></script>
-  </body>
+        <!-- First page START -->
+            <div class="mainCont " id="mainCont">
+                <div class="topBar">
+                    <div class="container">
+                        <h1>Homelette
+                            <small>From the best chefs in the world directly into your kitchen</small>
+                        </h1>
+                    </div>
+                </div>
+
+                <hr/>
+
+                <div class="row">
+                    <div class="col-md-4  information thumbnail">
+                        <h2>A Home Dinner Service</h2>
+                        <hr/>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare fermentum ligula sed rutrum. In non massa ac turpis feugiat tincidunt. Nunc imperdiet interdum nisl quis placerat.</p>
+
+                        <div class="buttonCont">
+                            <br/>
+                            <button class="btn btn-success btn-lg" id="createDinner">Create new dinner <span class="glyphicon glyphicon-chevron-right"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- First page END -->
+
+        <!-- Main Page START -->
+            <div class="mainContainer">
+
+                <div class="topBar">
+                    <div class="container">
+                        <h1>Homelette
+                            <small>From the best chefs in the world directly into your kitchen</small>
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="pageCont">
+                    <div class="row">
+
+                        <!-- sideBarView START -->
+                            <div class="sideBar  col-md-2 page" id="sidebar">
+                                <div class="sideBarContent">
+                                    <h4>My dinner</h4>
+
+                                    <form>
+                                        <div id="">
+                                            Number of guests: <span id="numberOfGuests"></span>
+                                        </div>
+                                        <button id="minusGuest" class="btn" type="button"><span class="glyphicon glyphicon-chevron-down"></span></button>
+                                        <button id="plusGuest" class="btn" type="button"><span class="glyphicon glyphicon-chevron-up"></span></button>
+                                        <br>
+                                        <br>
+
+                                        <table class="table" id="pendingDish">
+                                            <tr>
+                                                <th>Dish</th>
+                                                <th>Name</th>
+                                                <th>Cost</th>
+                                            </tr>
+
+                                        </table>
+                                        <hr/>
+
+                                        <div class="SEK">
+                                            <span>SEK</span>
+                                            <span  id="overallPrice"></span>
+                                        </div>
+                                        <br/>
+                                        <br/>
+
+                                        <button id="confirmButton" class="btn btn-success" disabled="disabled" type="button">Confirm dinner </button>
+
+                                    </form>
+                                </div>
+                            </div>
+                        <!-- sideBarView END -->
+
+                        <!-- selectDishView START -->
+                            <div class="foodCont col-md-10 page" id="selectDish">
+                                <div class="selectDish">
+                                    <h2>Select Dish</h2>
+                                    <hr/>
+                                    <div class="searchFood">
+                                        <form>
+                                            <input type="text" placeholder="Enter key words"/>
+                                            <button class="btn btn-warning" type="button"><span class="glyphicon glyphicon-search"></span> Search</button>
+                                        </form>
+
+                                        <select name="" id="dropdownId">
+                                            <option value="1" selected="selected">Starter</option>
+                                            <option value="2">Main</option>
+                                            <option value="3">Dessert</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <br/>
+
+                                <div class="row">
+
+                                    <div id="dishes"></div>
+
+                                </div>
+                            </div>
+                        <!-- selectDishView END -->
+
+                        <!-- meatBallsView Start -->
+                        <div class="foodCont col-md-10 page" id="meatBallsViewId">
+                            <div class="row">
+
+                                <div id="foodAndIngredients"></div>
+
+                            </div>
+                        </div>
+                        <!-- meatBallsView END -->
+
+                        <!-- dinnerOverviewView START -->
+                            <div class="page" id="dinnerOverview">
+                                <div class="dinnerOverview">
+                                    <div class="dinnerOverviewCont">
+                                        <h2>My Dinner: <span id="dinnerOverviewGuests"></span> people</h2>
+                                        <button class=" btn btn-warning btn-md"><span class="glyphicon glyphicon-chevron-left"></span> Go back and edit dinner</button>
+                                    </div>
+                                </div>
+
+                                <div class="foodMenu">
+                                    <div class="container">
+                                        <br/>
+
+                                        <div class="row">
+
+                                            <div id="dinnerOnMenu"></div>
+
+                                            <div class="col-md-3 verticalLine">
+                                                <span>Total:</span>
+                                                <span id="dinnerOverviewPrice"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr/>
+
+                                <div class="endBtnCont">
+                                    <button class="btn btn-success btn-lg">Print Full Recipe <span class="glyphicon glyphicon-print"></span></button>
+                                </div>
+                            </div>
+                        <!-- dinnerOverviewView END -->
+
+
+
+                        <!-- dinnerPreparationView START -->
+                            <div class="page" id="dinnerPreparation">
+                                <div class="dinnerOverview">
+                                    <div class="dinnerOverviewCont">
+                                        <h2>My Dinner: <span id="dinnerPreparationGuests"></span> people</h2>
+                                        <button class=" btn btn-warning btn-md"><span class="glyphicon glyphicon-chevron-left"></span> Go back and edit dinner</button>
+                                    </div>
+                                </div>
+
+                                <div class="dinnerPreparation">
+                                    <div class="dinnerPreparationCont row">
+
+                                        <div id="mealsPreparation"></div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- dinnerPreparationView END -->
+
+
+                    </div>
+                </div>
+            </div>
+        <!-- Main page END -->
+
+
+
+
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+        <!-- The application JavaScript code -->
+        <script src="js/app.js"></script>
+        <script src="js/model/dinnerModel.js"></script>
+        <script src="js/view/exampleView.js"></script>
+        <script src="js/controller/exampleViewController.js"></script>
+        <script src="js/view/selectDishView.js"></script>
+        <script src="js/controller/selectDishController.js"></script>
+        <script src="js/view/sideBarView.js"></script>
+        <script src="js/controller/sideBarController.js"></script>
+        <script src="js/view/dinnerOverviewView.js"></script>
+        <script src="js/view/dinnerPreparationView.js"></script>
+        <script src="js/view/meatBallsView.js"></script>
+        <script src="js/view/firstPageView.js"></script>
+        <script src="js/controller/firstPageController.js"></script>
+        <script src="js/controller/mainController.js"></script>
+        <script src="js/controller/meatBallsController.js"></script>
+    </body>
 </html>
